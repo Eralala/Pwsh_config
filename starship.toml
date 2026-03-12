@@ -1,0 +1,20 @@
+[status]
+disabled = false
+symbol = ''
+format = '[\[$common_meaning$signal_name$maybe_int\]]($style) '
+
+[character]
+success_symbol = '[>](bold green)'
+error_symbol   = '[>](bold red)'
+
+[git_status]
+format = '([$stashed$conflicted$modified]($style))([\[$ahead_behind$diverged$deleted$renamed$staged$untracked\]]($style)) '
+# format = '($all_status$ahead_behind)($style)'
+modified = "📝"
+conflicted = "💥"
+stashed = "📥"
+
+[nodejs]
+format = "via [$symbol]($style)[$version]($style) "
+style = "#E6DB74"
+symbol = "🍯 "
