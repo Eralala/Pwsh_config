@@ -1,7 +1,6 @@
 # == set_proxy== 
 $env:http_proxy="http://127.0.0.1:7897"
 $env:https_proxy="http://127.0.0.1:7897"
-$env:all_proxy="socks5://127.0.0.1:7897"
 # $env:SCOOP = "E:\scoop"
 
 # == starship(prompt) ==
