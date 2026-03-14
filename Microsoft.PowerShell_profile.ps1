@@ -156,7 +156,7 @@ function cp {
 
 # ==install micromamba==
 # $env:MAMBA_EXE="E:\Apps\micromamba\micromamba.exe"
-# $env:MAMBA_ROOT_PREFIX="E:\Apps\micromamba\mamba"$MambaModuleArgs = @{ChangePs1 = $True}
+# $env:MAMBA_ROOT_PREFIX="E:\Apps\micromamba\mamba"
 Set-Alias mm micromamba
 function ma { micromamba activate @args }
 function me { micromamba deactivate }
