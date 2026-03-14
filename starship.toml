@@ -18,3 +18,7 @@ stashed = "📥"
 format = "via [$symbol]($style)[$version]($style) "
 style = "#E6DB74"
 symbol = "🍯 "
+
+[conda]
+symbol = "🅼 "
+style = "blue bold"

@@ -3,9 +3,11 @@ $env:http_proxy="http://127.0.0.1:7897"
 $env:https_proxy="http://127.0.0.1:7897"
 # $env:SCOOP = "E:\scoop"
 
+
 # == starship(prompt) ==
 $env:STARSHIP_CONFIG="$HOME\.config\starship.toml"
 Invoke-Expression (&starship init powershell)
+
 
 # ==set_complete==
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
@@ -28,6 +30,7 @@ Set-PSReadLineOption -Colors @{
     # Default = "`e[1;35m"
 }
 
+
 #==set_alias==
 function which { param($name); scoop which $name }
 function cat { param($name); scoop cat $name }
@@ -37,7 +40,7 @@ Set-Alias vi nvim
 Set-Alias g rg
 Set-Alias c cls
 Set-Alias note notepad
-# rewrite ls,la
+# rewrite ls
 Remove-Item Alias:ls
 function ls {
     $items = Get-ChildItem 
@@ -90,6 +93,7 @@ function ls {
         }
     }
 }
+# rewrite la
 function la {
     $items = Get-ChildItem -Force
     # Helper function: convert bytes to readable units
@@ -150,3 +154,9 @@ function cp {
     Copy-Item -Path $src -Destination $dst -Recurse -Force
 }
 
+# ==install micromamba==
+# $env:MAMBA_EXE="E:\Apps\micromamba\micromamba.exe"
+# $env:MAMBA_ROOT_PREFIX="E:\Apps\micromamba\mamba"$MambaModuleArgs = @{ChangePs1 = $True}
+Set-Alias mm micromamba
+function ma { micromamba activate @args }
+function me { micromamba deactivate }
