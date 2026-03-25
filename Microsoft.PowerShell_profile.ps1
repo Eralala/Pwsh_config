@@ -1,6 +1,15 @@
 # == set_proxy== 
-$env:http_proxy="http://127.0.0.1:7897"
-$env:https_proxy="http://127.0.0.1:7897"
+function Set-Proxy {
+    $env:http_proxy  = "http://127.0.0.1:7897"
+    $env:https_proxy = "http://127.0.0.1:7897"
+    Write-Host "Proxy enabled: 127.0.0.1:7897"
+}
+
+function Unset-Proxy {
+    Remove-Item Env:http_proxy -ErrorAction SilentlyContinue
+    Remove-Item Env:https_proxy -ErrorAction SilentlyContinue
+    Write-Host "Proxy disabled"
+}
 # $env:SCOOP = "E:\scoop"
 
 
@@ -32,6 +41,8 @@ Set-PSReadLineOption -Colors @{
 
 
 #==set_alias==
+Set-Alias enable Set-Proxy
+Set-Alias disable Unset-Proxy
 function which { param($name); scoop which $name }
 function cat { param($name); scoop cat $name }
 Set-Alias vim nvim
