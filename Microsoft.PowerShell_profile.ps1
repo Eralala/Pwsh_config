@@ -1,8 +1,12 @@
 # == set_proxy== 
 function Set-Proxy {
-    $env:http_proxy  = "http://127.0.0.1:7897"
-    $env:https_proxy = "http://127.0.0.1:7897"
-    Write-Host "Proxy enabled: 127.0.0.1:7897"
+    param(
+        [int]$Port = 7897  # 默认端口
+    )
+    $proxyAddress = "http://127.0.0.1:$Port"
+    $env:http_proxy  = $proxyAddress
+    $env:https_proxy = $proxyAddress
+    Write-Host "Proxy enabled: $proxyAddress"
 }
 
 function Unset-Proxy {
@@ -43,6 +47,7 @@ Set-PSReadLineOption -Colors @{
 #==set_alias==
 Set-Alias enable Set-Proxy
 Set-Alias disable Unset-Proxy
+Set-Alias rm Remove-Item
 function which { param($name); scoop which $name }
 function cat { param($name); scoop cat $name }
 Set-Alias vim nvim
