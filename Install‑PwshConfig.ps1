@@ -12,8 +12,14 @@ Try {
     Write-Warning "未能修改执行策略，请以管理员身份运行 PowerShell"
 }
 
-# 2) 确保 Scoop 安装目录环境变量
-$env:SCOOP = "$env:USERPROFILE\scoop"
+# 2) 选择 Scoop 安装路径
+$defaultScoop = "$env:USERPROFILE\scoop"
+$customPath = Read-Host "请输入 Scoop 安装路径（回车使用默认路径 $defaultScoop）"
+if ([string]::IsNullOrWhiteSpace($customPath)) {
+    $env:SCOOP = $defaultScoop
+} else {
+    $env:SCOOP = $customPath
+}
 Write-Host "SCOOP 安装路径设为： $env:SCOOP"
 
 # 3) 安装 Scoop（如果未安装）
