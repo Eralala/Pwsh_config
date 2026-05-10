@@ -50,6 +50,7 @@ Set-Alias disable Unset-Proxy
 Set-Alias rm Remove-Item
 function which { param($name); scoop which $name }
 function cat { param($name); scoop cat $name }
+# scoop bucket add main && scoop install neovim
 Set-Alias vim nvim
 Set-Alias vi nvim
 # scoop install ripgrep
