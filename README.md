@@ -15,7 +15,7 @@
 
 ---
 
-## ⚡ 配置同步流程
+## ⚡ 手动配置同步流程
 
 ### 1. 准备环境
 
@@ -53,5 +53,12 @@
 
 1. `code $PROFILE` 后复制PowerShell 配置文件内容
 2. `code ~/.config/starship.toml` 后复制Starship 配置文件内容  
+
+## ⚡ 脚本自动配置同步
+
+1. 通过以下命令一键同步配置
+  ```bash
+    irm https://raw.githubusercontent.com/Eralala/Pwsh_config/main/Install-PwshConfig.ps1 | iex
+  ```
 
 配置同步完成！
