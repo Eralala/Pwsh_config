@@ -51,7 +51,7 @@
 ---
 ### 2. 同步配置
 
-1. code $PROFILE 后复制PowerShell 配置文件内容
-2. code ~/.config/starship.toml 后复制Starship 配置文件内容  
+1. `code $PROFILE` 后复制PowerShell 配置文件内容
+2. `code ~/.config/starship.toml` 后复制Starship 配置文件内容  
 
 配置同步完成！
